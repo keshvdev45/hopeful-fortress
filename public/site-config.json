@@ -1,0 +1,183 @@
+{
+  "site": {
+    "name": "Fathers Vision",
+    "tagline": "Local hearts. Global hope. Real change.",
+    "defaultLanguage": "en",
+    "languages": ["en", "hi"],
+    "theme": {
+      "primary": "#0B7EFF",
+      "accent": "#FF6B35", 
+      "fonts": {
+        "heading": "Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial",
+        "body": "Roboto, system-ui, -apple-system, 'Segoe UI', Arial"
+      }
+    }
+  },
+  "seo": {
+    "metaTitle": "Fathers Vision - Empowering Rural Communities Through Education & Health",
+    "metaDescription": "Fathers Vision works to empower rural communities through education, health services and livelihood programs. Join us in creating sustainable change.",
+    "ogImage": "/assets/og-image.jpg"
+  },
+  "hero": {
+    "variant": "emotional",
+    "variants": {
+      "emotional": {
+        "headline": "Every child deserves education. Every community deserves hope.",
+        "sub": "Join local volunteers to provide education & health services to remote villages across India.",
+        "ctaPrimary": "Donate Now",
+        "ctaSecondary": "Volunteer With Us"
+      },
+      "impact": {
+        "headline": "5,432 children educated across 47 villages.",
+        "sub": "Your support scales our programs and keeps kids in school.",
+        "ctaPrimary": "See Our Impact",
+        "ctaSecondary": "Start Donating"
+      }
+    },
+    "heroImage": "/src/assets/hero-education.jpg",
+    "alt": "Volunteers teaching children in a rural classroom"
+  },
+  "donation": {
+    "currency": "INR", 
+    "tiers": [
+      {
+        "amount": 500,
+        "label": "School supplies for 5 children",
+        "recurring": false,
+        "impact": "Provides notebooks, pencils, and learning materials"
+      },
+      {
+        "amount": 2000,
+        "label": "One month midday meal for a class", 
+        "recurring": false,
+        "impact": "Nutritious meals that keep children in school"
+      },
+      {
+        "amount": 5000,
+        "label": "Monthly support for education program",
+        "recurring": true,
+        "impact": "Sustains teacher training and classroom resources"
+      },
+      {
+        "amount": 10000,
+        "label": "Sponsor a child's education for 1 year",
+        "recurring": false,
+        "impact": "Complete educational support including books, meals, and health checkups"
+      }
+    ],
+    "stripeCheckout": {
+      "enabled": true,
+      "serverEndpoint": "/api/create-checkout-session"
+    }
+  },
+  "programs": [
+    {
+      "id": "education",
+      "title": "Education & Learning",
+      "summary": "After-school tuition centers, library programs, and teacher training in rural communities.",
+      "description": "We establish learning centers in villages where children receive quality education, homework support, and access to books and educational resources.",
+      "image": "/src/assets/hero-education.jpg",
+      "stats": {
+        "beneficiaries": 5432,
+        "locations": 47,
+        "metric": "children educated"
+      }
+    },
+    {
+      "id": "health",
+      "title": "Community Health",
+      "summary": "Mobile health camps, health screenings, and maternal care programs.",
+      "description": "Regular health camps provide essential medical care, vaccinations, and health education to underserved communities.",
+      "image": "/src/assets/program-health.jpg",
+      "stats": {
+        "beneficiaries": 8200,
+        "locations": 32,
+        "metric": "people treated"
+      }
+    },
+    {
+      "id": "livelihood",
+      "title": "Livelihood Training",
+      "summary": "Vocational skills training and small business support for sustainable income.",
+      "description": "Empowering women and youth with practical skills like tailoring, farming techniques, and entrepreneurship.",
+      "image": "/src/assets/program-livelihood.jpg", 
+      "stats": {
+        "beneficiaries": 1850,
+        "locations": 28,
+        "metric": "people trained"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "health-camp-kalyanpur",
+      "title": "Village Health Camp - Kalyanpur",
+      "date": "2025-09-15",
+      "location": "Kalyanpur Village, Uttar Pradesh",
+      "description": "Free health checkups, vaccinations, and health awareness sessions.",
+      "rsvp": true
+    },
+    {
+      "id": "education-drive-bastar",
+      "title": "Education Material Distribution Drive",
+      "date": "2025-10-01", 
+      "location": "Bastar District, Chhattisgarh",
+      "description": "Distribution of school supplies and setting up a new learning center.",
+      "rsvp": true
+    },
+    {
+      "id": "volunteer-training",
+      "title": "Volunteer Training Workshop",
+      "date": "2025-10-15",
+      "location": "Delhi Regional Office", 
+      "description": "Training session for new volunteers on community engagement and program delivery.",
+      "rsvp": true
+    }
+  ],
+  "team": [
+    {
+      "name": "Rajesh Sharma",
+      "role": "Founder & Director",
+      "bio": "Rajesh leads program strategy with 15 years of rural development experience. Former corporate executive turned social entrepreneur.",
+      "photo": "/assets/team-rajesh.jpg"
+    },
+    {
+      "name": "Dr. Priya Mehta",
+      "role": "Health Program Director",
+      "bio": "Dr. Mehta oversees all health initiatives with expertise in public health and rural healthcare delivery.",
+      "photo": "/assets/team-priya.jpg"
+    },
+    {
+      "name": "Amit Singh",
+      "role": "Education Coordinator", 
+      "bio": "Amit manages our education programs across 47 villages, ensuring quality learning outcomes.",
+      "photo": "/assets/team-amit.jpg"
+    }
+  ],
+  "impact": {
+    "totalBeneficiaries": 15482,
+    "villagesReached": 47,
+    "programsActive": 3,
+    "volunteersActive": 125,
+    "stats": [
+      {"label": "Children Educated", "value": 5432, "unit": "+"},
+      {"label": "Health Checkups", "value": 8200, "unit": "+"},
+      {"label": "People Trained", "value": 1850, "unit": "+"},
+      {"label": "Villages Reached", "value": 47, "unit": ""}
+    ]
+  },
+  "contact": {
+    "email": "connect@fathers-vision.org",
+    "phone": "+91 98765 43210",
+    "address": "123 Community Center Road, New Delhi 110001",
+    "socialMedia": {
+      "facebook": "https://facebook.com/fathersvision",
+      "twitter": "https://twitter.com/fathersvision", 
+      "instagram": "https://instagram.com/fathersvision"
+    }
+  },
+  "privacy": {
+    "dataRetentionYears": 3,
+    "contactEmail": "privacy@fathers-vision.org"
+  }
+}
