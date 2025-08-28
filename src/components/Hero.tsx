@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { loadConfig } from '@/lib/config';
 import type { SiteConfig } from '@/types/config';
 import { ArrowRight, Play, Heart, Users, BookOpen } from 'lucide-react';
+import { DonateModal } from './DonateModal';
 import heroImage from '@/assets/hero-education.jpg';
 
 export function Hero() {
@@ -61,15 +62,19 @@ export function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                variant="donate" 
-                size="lg"
-                className="group"
-              >
-                <Heart className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
-                {currentVariant.ctaPrimary}
-                <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              <DonateModal 
+                trigger={
+                  <Button 
+                    variant="donate" 
+                    size="lg"
+                    className="group"
+                  >
+                    <Heart className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
+                    {currentVariant.ctaPrimary}
+                    <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                }
+              />
               <Button 
                 variant="outline" 
                 size="lg"

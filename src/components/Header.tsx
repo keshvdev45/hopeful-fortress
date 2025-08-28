@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { loadConfig } from '@/lib/config';
 import type { SiteConfig } from '@/types/config';
 import { Menu, X, Heart, Users, BookOpen, Calendar } from 'lucide-react';
+import { DonateModal } from './DonateModal';
 
 export function Header() {
   const [config, setConfig] = useState<SiteConfig | null>(null);
@@ -40,31 +41,39 @@ export function Header() {
             </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => {
-              const Icon = item.icon;
-              return (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors group"
-                >
-                  <Icon className="h-4 w-4 group-hover:scale-110 transition-transform" />
-                  <span className="font-medium">{item.name}</span>
-                </a>
-              );
-            })}
-          </div>
+      <div className="hidden md:flex items-center space-x-8">
+        {navigation.map((item) => {
+          const Icon = item.icon;
+          return (
+            <a
+              key={item.name}
+              href={item.href}
+              className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors group"
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.querySelector(item.href);
+                element?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              <Icon className="h-4 w-4 group-hover:scale-110 transition-transform" />
+              <span className="font-medium">{item.name}</span>
+            </a>
+          );
+        })}
+      </div>
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-3">
             <Button variant="outline" size="sm">
               Volunteer
             </Button>
-            <Button variant="donate" size="sm">
-              Donate Now
-            </Button>
+            <DonateModal 
+              trigger={
+                <Button variant="donate" size="sm">
+                  Donate Now
+                </Button>
+              } 
+            />
           </div>
 
           {/* Mobile menu button */}
@@ -91,7 +100,12 @@ export function Header() {
                     key={item.name}
                     href={item.href}
                     className="flex items-center space-x-3 text-foreground hover:text-primary transition-colors py-2"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsMenuOpen(false);
+                      const element = document.querySelector(item.href);
+                      element?.scrollIntoView({ behavior: 'smooth' });
+                    }}
                   >
                     <Icon className="h-5 w-5" />
                     <span className="font-medium">{item.name}</span>
@@ -102,9 +116,13 @@ export function Header() {
                 <Button variant="outline" className="w-full">
                   Volunteer With Us
                 </Button>
-                <Button variant="donate" className="w-full">
-                  Donate Now
-                </Button>
+                <DonateModal 
+                  trigger={
+                    <Button variant="donate" className="w-full">
+                      Donate Now
+                    </Button>
+                  } 
+                />
               </div>
             </div>
           </div>
